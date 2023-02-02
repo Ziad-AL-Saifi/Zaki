@@ -8,7 +8,7 @@ import '../../views/signup_view.dart';
 import '../../views/splash_view.dart';
 
 class RoutersManager {
-  static const String mainRout = '/';
+  static const String splash = '/';
   static const String login = '/login';
   static const String signup = '/signup';
   static const String home = '/home';
@@ -18,7 +18,7 @@ class RoutersManager {
 
 final router = GoRouter(routes: [
   GoRoute(
-    path: RoutersManager.mainRout,
+    path: RoutersManager.splash,
     builder: (context, state) => const SplashView(),
   ),
   GoRoute(
