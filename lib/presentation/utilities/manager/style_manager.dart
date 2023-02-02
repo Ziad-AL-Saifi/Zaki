@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:zaki/presentation/font_manager.dart';
+
+import 'font_manager.dart';
 
 TextStyle _getStyle(
     {required double size,
