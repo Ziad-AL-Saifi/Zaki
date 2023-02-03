@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
 import '../../../../app/utilities/manager/colors_maneger.dart';
-import '../onbordering_view.dart';
+import '../../model/pagesview_model.dart';
+import '../../view_model/function.dart';
 
 class OnborderingBoottomSheet extends StatelessWidget {
   const OnborderingBoottomSheet({

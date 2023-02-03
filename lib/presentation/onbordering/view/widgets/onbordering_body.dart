@@ -10,7 +10,7 @@ class OnborderingBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: ColorsManeger.kWhiteColor,
-      child: const PageViewOnboreder(),
+      child: PageViewOnboreder(pageController: PageController()),
     );
   }
 }
