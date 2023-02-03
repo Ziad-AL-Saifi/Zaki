@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:zaki/presentation/utilities/manager/style_manager.dart';
-import 'package:zaki/presentation/utilities/manager/values_manager.dart';
+import 'package:zaki/app/utilities/manager/style_manager.dart';
+import 'package:zaki/app/utilities/manager/values_manager.dart';
 
 import 'colors_maneger.dart';
 import 'font_manager.dart';
