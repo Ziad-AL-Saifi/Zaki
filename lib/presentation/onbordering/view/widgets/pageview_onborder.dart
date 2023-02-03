@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zaki/app/utilities/manager/assets_manager.dart';
 import 'package:zaki/app/utilities/manager/colors_maneger.dart';
 import 'package:zaki/app/utilities/manager/font_manager.dart';
@@ -6,6 +7,7 @@ import 'package:zaki/app/utilities/manager/style_manager.dart';
 import '../../../../app/utilities/manager/string_manager.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../view_model/bloc/onbordering_bloc.dart';
 import 'itam_page_view.dart';
 
 class PageViewOnboreder extends StatelessWidget {
@@ -13,15 +15,23 @@ class PageViewOnboreder extends StatelessWidget {
   final PageController pageController;
   @override
   Widget build(BuildContext context) {
-    return PageView.builder(
-      controller: pageController,
-      itemCount: 4,
-      itemBuilder: (context, index) {
-        return const ItemPageView(
-          image: ImageManager.logo1,
-          subTitle: StringManager.onBorderingSubline1,
-          title: StringManager.onBorderingHedlin1,
-        );
+    return BlocConsumer<OnborderingBloc, OnborderingState>(
+      listener: (context, state) {},
+      builder: (context, state) {
+        if (state is OnborderingSuccess) {
+          return PageView.builder(
+            onPageChanged: (value) {},
+            controller: pageController,
+            itemCount: 4,
+            itemBuilder: (context, index) {
+              return const ItemPageView(
+                image: ImageManager.logo1,
+                subTitle: StringManager.onBorderingSubline1,
+                title: StringManager.onBorderingHedlin1,
+              );
+            },
+          );
+        }
       },
     );
   }
