@@ -6,7 +6,7 @@ import '../../model/pagesview_model.dart';
 part 'onbordering_state.dart';
 
 class OnborderingCubit extends Cubit<OnborderingState> {
-  OnborderingCubit() : super(OnborderNextStat());
+  OnborderingCubit() : super(OnborderInit());
 
   int count = 0;
   PageController pageController = PageController();
@@ -30,7 +30,7 @@ class OnborderingCubit extends Cubit<OnborderingState> {
   ];
 
   int getPageNumber() {
-    emit(OnborderNextStat());
+    emit(OnborderNumber(length: onBorderItem.length));
     return count;
   }
 

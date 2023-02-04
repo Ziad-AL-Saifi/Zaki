@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zaki/app/utilities/manager/colors_maneger.dart';
 import 'package:zaki/app/utilities/manager/values_manager.dart';
 import 'package:zaki/presentation/onbordering/view/widgets/onbordering_body.dart';

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zaki/presentation/onbordering/view/widgets/pageview_onborder.dart';
-import 'package:zaki/presentation/onbordering/view_model/cubit/onbordering_cubit.dart';
 
 import '../../../../app/utilities/manager/colors_maneger.dart';
 

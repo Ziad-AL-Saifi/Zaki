@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:zaki/app/utilities/manager/assets_manager.dart';
 import 'package:zaki/presentation/onbordering/model/pagesview_model.dart';
-
 import '../../../../app/utilities/manager/colors_maneger.dart';
 import '../../../../app/utilities/manager/font_manager.dart';
 import '../../../../app/utilities/manager/style_manager.dart';

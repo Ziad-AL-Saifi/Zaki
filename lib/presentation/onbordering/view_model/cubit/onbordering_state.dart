@@ -3,6 +3,11 @@ part of 'onbordering_cubit.dart';
 
 abstract class OnborderingState {}
 
-class OnborderNextStat extends OnborderingState {}
+class OnborderNumber extends OnborderingState {
+  int length;
+  OnborderNumber({
+    required this.length,
+  });
+}
 
-class OnborderPrevStat extends OnborderingState {}
+class OnborderInit extends OnborderingState {}

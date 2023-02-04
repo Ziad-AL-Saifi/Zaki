@@ -1,7 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:zaki/app/utilities/manager/assets_manager.dart';
+import 'package:zaki/app/utilities/routers/routers.dart';
 import '../../../../app/utilities/manager/colors_maneger.dart';
 import '../../view_model/cubit/onbordering_cubit.dart';
 
@@ -21,7 +23,11 @@ class _BottombarItemState extends State<BottombarItem> {
       color: ColorsManeger.kWhiteColor,
       height: 100,
       child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-        TextButton(onPressed: () {}, child: const Text('Skip')),
+        TextButton(
+            onPressed: () {
+              GoRouter.of(context).push(RoutersManager.home);
+            },
+            child: const Text('Skip')),
         Expanded(
           child: Container(
             height: 100,
@@ -32,21 +38,25 @@ class _BottombarItemState extends State<BottombarItem> {
               children: [
                 GestureDetector(
                     onTap: () {
-                      privPAge(context);
+                      privPage(context);
                     },
                     child: Image.asset(ImageManager.left)),
                 BlocBuilder<OnborderingCubit, OnborderingState>(
                     builder: (context, state) {
-                  return Row(children: [
-                    for (int i = 0; i < 4; i++)
-                      Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 2),
-                          child: i ==
-                                  BlocProvider.of<OnborderingCubit>(context)
-                                      .getPageNumber()
-                              ? Image.asset(ImageManager.hold)
-                              : Image.asset(ImageManager.select))
-                  ]);
+                  if (state is OnborderNumber) {
+                    return Row(children: [
+                      for (int i = 0; i < state.length; i++)
+                        Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 2),
+                            child: i ==
+                                    BlocProvider.of<OnborderingCubit>(context)
+                                        .getPageNumber()
+                                ? Image.asset(ImageManager.hold)
+                                : Image.asset(ImageManager.select))
+                    ]);
+                  } else {
+                    return const Text('Hi');
+                  }
                 }),
                 GestureDetector(
                     onTap: () {
@@ -68,7 +78,7 @@ class _BottombarItemState extends State<BottombarItem> {
         curve: Curves.decelerate);
   }
 
-  void privPAge(BuildContext context) {
+  void privPage(BuildContext context) {
     BlocProvider.of<OnborderingCubit>(context).pageController.animateToPage(
         BlocProvider.of<OnborderingCubit>(context).getPrevPage(),
         duration: const Duration(milliseconds: 200),
