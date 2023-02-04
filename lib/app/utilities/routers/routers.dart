@@ -1,10 +1,11 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../presentation/details/view/details_view.dart';
 import '../../../presentation/forgetpass/view/forgetpass_view.dart';
 import '../../../presentation/home/view/home_view.dart';
 import '../../../presentation/login/view/login_view.dart';
 import '../../../presentation/onbordering/view/onbordering_view.dart';
+import '../../../presentation/onbordering/view_model/cubit/onbordering_cubit.dart';
 import '../../../presentation/signup/view/signup_view.dart';
 import '../../../presentation/splash/view/splash_view.dart';
 
@@ -46,6 +47,9 @@ final router = GoRouter(routes: [
   ),
   GoRoute(
     path: RoutersManager.onBordering,
-    builder: (context, state) => const OnBorderingView(),
+    builder: (context, state) => BlocProvider(
+      create: (context) => OnborderingCubit(),
+      child: const OnBorderingView(),
+    ),
   )
 ]);

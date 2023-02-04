@@ -1,5 +1,5 @@
-class OnBorderItem {
-  OnBorderItem({
+class OnBorderItemModel {
+  OnBorderItemModel({
     required this.title,
     required this.subTitle,
     required this.image,
